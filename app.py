@@ -22,10 +22,37 @@ from menu_generator import MenuGenerator, MenuConfig, MealConfig
 
 # 页面配置
 st.set_page_config(
-    page_title="小学托管班菜单生成器",
-    page_icon="🍱",
-    layout="wide"
-)
+      page_title="小学托管班菜单生成器",
+      page_icon="🍱",
+      layout="centered"
+  )
+# 移动端优化样式
+  st.markdown("""
+  <style>
+      /* 移动端字体优化 */
+      @media (max-width: 768px) {
+          .stMarkdown h1 {
+              font-size: 1.5rem !important;
+          }
+          .stMarkdown h2 {
+              font-size: 1.2rem !important;
+          }
+          .stMarkdown h3 {
+              font-size: 1rem !important;
+          }
+          .stDataFrame {
+              font-size: 0.85rem !important;
+          }
+          .stButton button {
+              width: 100% !important;
+          }
+      }
+      /* 表格在移动端可横向滚动 */
+      .stDataFrame [data-testid="stDataFrameResizable"] {
+          overflow-x: auto !important;
+      }
+  </style>
+  """, unsafe_allow_html=True)
 
 # 标题
 st.title("🍱 小学托管班菜单生成器")
